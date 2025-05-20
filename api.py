@@ -1,13 +1,6 @@
-# --- Configuration de l'environnement ---
 import os
 import warnings
-
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
-warnings.filterwarnings("ignore")
-
 from transformers import logging
-
-logging.set_verbosity_error()
 
 # --- Imports FastAPI & modèles ---
 from fastapi import FastAPI
@@ -20,6 +13,14 @@ from utils import preprocess_tweet_bert
 
 import gdown
 import zipfile
+
+# --- Configuration de l'environnement ---
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+warnings.filterwarnings("ignore")
+
+
+logging.set_verbosity_error()
+
 
 # --- Téléchargement du modèle depuis Google Drive si non présent ---
 model_path = "./bert_model"
