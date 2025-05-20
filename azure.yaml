@@ -1,0 +1,5 @@
+version: 1.0
+build:
+  language: python
+  python_version: 3.11
+  requirements_txt: requirements.txt
